@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <center>
+        
+    <div style="margin-top: 50px;">
+        <form action="">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOtu74pEiq7ofeQeTsco0migV16zZoBwSlGg&usqp=CAU" alt="" style="height: 100px;width: 100px;"><br><br><br>
+            <label for="" style="margin-right: 410px;font-size: larger;font-style: italic;color: rgb(102, 100, 100);">Your name*</label><br><br>
+            <input type="text" id="name" placeholder="Full Name" style="padding-left: 10px; border-radius: 8px;border-color: grey;border-style: solid;font-style: italic;width: 530px;"><br><br>
+            <label for="" style="margin-right: 410px;font-size: larger;font-style: italic;color: rgb(102, 100, 100);">Your Email*</label><br><br>
+            <input type="text" id="email" placeholder="E-mail" style="padding-left: 10px; border-radius: 8px;border-color: grey;border-style: solid;font-style: italic;width: 530px;"><br><br>
+            <label for="" style="margin-right: 400px;font-size: larger;font-style: italic;color: rgb(102, 100, 100);">Phone number*</label><br><br>
+            <input type="text" id="phno" placeholder="Phone number" style="padding-left: 10px; border-radius: 8px;border-color: grey;border-style: solid;font-style: italic;width: 530px;"><br><br>
+            <label for="" style="margin-right: 490px;font-size: larger;font-style: italic;color: rgb(102, 100, 100);">Age</label><br><br>
+            <input type="text" id="age" placeholder="Age" style="padding-left: 10px; border-radius: 8px;border-color: grey;border-style: solid;font-style: italic;width: 530px;"><br><br>
+            <label for="" style="margin-right: 420px;font-size: larger;font-style: italic;color: rgb(102, 100, 100);">Date of Birth*</label><br><br>
+            <input type="text" id="dob" placeholder="DD/MM/YY" style="padding-left: 10px; border-radius: 8px;border-color: grey;border-style: solid;font-style: italic;width: 530px;"><br><br>
+            <label for="" style="margin-right: 420px;font-size: larger;font-style: italic;color: rgb(102, 100, 100);">Gender</label><br><br>
+            <input type="radio" id="gender" style="color: rgb(102, 100, 100);">&nbsp; Male &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" id="gender" style="color: rgb(102, 100, 100);">&nbsp; Female &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" id="gender" style="color: rgb(102, 100, 100);">&nbsp; Other &nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+            <label for="" style="margin-right: 460px;font-size: larger;font-style: italic;color: rgb(102, 100, 100);">Address*</label><br><br>
+            <textarea name="" id="address" cols="30" rows="5" placeholder="Present Address" style="padding-left: 10px; border-radius: 8px;border-color: grey;border-style: solid;font-style: italic;width: 530px;"></textarea><br> <br>
+            <label for="" style="margin-right: 420px;font-size: larger;font-style: italic;color: rgb(102, 100, 100);">Qualification*</label><br><br>
+            <textarea name="" id="qualification" cols="30" rows="5" placeholder="Qualifications" style="padding-left: 10px; border-radius: 8px;border-color: grey;border-style: solid;font-style: italic;width: 530px;"></textarea><br><br>
+            <button type="button" onclick="addData()" style="background-color: grey;border: 0px;width: 150px;border-radius: 8px;color: white;height: 40px;">Submit</button>
+        </form>
+</div>
+</center>
+<div style="margin-top: 100px;">
+    <table class="table" id="todo_tb">
+        <thead>
+          <tr>
+            <th scope="col">SL.No</th>
+            <th scope="col">Name</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Phone no</th>
+            <th scope="col">Age</th>
+            <th scope="col">DOB</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Address</th>
+            <th scope="col">Qualification</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+         
+        </tbody>
+      </table>
+      <script>
+         var s_no = 0
+         var tr_no = 0
+         function addData()
+         {
+          var tb = document.getElementById("todo_tb")
+          var new_tr = document.createElement("tr")
+          var name = document.getElementById("name")
+          var email = document.getElementById("email")
+          var phno = document.getElementById("phno")
+          var age = document.getElementById("age")
+          var dob = document.getElementById("dob")
+          var gender = document.getElementById("gender")
+          var address = document.getElementById("address")
+          var qualification = document.getElementById("qualification")
+          tr_no ++
+          var tr_id = "tr" + tr_no
+          new_tr.setAttribute("id",tr_id)
+
+          var td_sn = new_tr.appendChild(document.createElement("td"))
+          var td_name = new_tr.appendChild(document.createElement("td"))
+          var td_email = new_tr.appendChild(document.createElement("td"))
+          var td_phno = new_tr.appendChild(document.createElement("td"))
+          var td_age = new_tr.appendChild(document.createElement("td"))
+          var td_dob = new_tr.appendChild(document.createElement("td"))
+          var td_gender = new_tr.appendChild(document.createElement("td"))
+          var td_address = new_tr.appendChild(document.createElement("td"))
+          var td_qualification = new_tr.appendChild(document.createElement("td"))
+          var td_action = new_tr.appendChild(document.createElement("td"))
+          var td_action = new_tr.appendChild(document.createElement("td"))
+          var td_edit = new_tr.appendChild(document.createElement("td"))
+          s_no ++
+          td_sn.innerHTML = s_no
+          td_name.innerHTML = name.value
+          td_email.innerHTML = email.value
+          td_phno.innerHTML = phno.value
+          td_age.innerHTML = age.value
+          td_dob.innerHTML = dob.value
+          td_gender.innerHTML = gender.value
+          td_address.innerHTML = address.value
+          td_qualification.innerHTML = qualification.value
+          td_action.innerHTML = "<button onclick=deleteRow(this) type='button' class='btn btn-primary'>DELETE</button>"
+          td_edit.innerHTML = "<button onclick=editRow() type='button' class='btn btn-primary'>EDIT</button>"
+
+
+          tb.appendChild(new_tr)
+          name.value = ""
+          email.value = ""
+          phno.value = ""
+          age.value = ""
+          dob.value = ""
+          gender.value = ""
+          address.value = ""
+          qualification.value = ""
+        }   
+
+        function editRow()
+        {
+          document.getElementById("name").value = name;
+          document.getElementById("email").value = email;
+          document.getElementById("phno").value = phno;
+          document.getElementById("age").value = age;
+          document.getElementById("dob").value = dob;
+          document.getElementById("gender").value = gender;
+          document.getElementById("address").value = address;
+          document.getElementById("qualification").value = qualification;
+        }
+
+        function deleteRow(r)
+        {
+          var i = r.parentNode.parentNode.rowIndex;
+          document.getElementById("todo_tb").deleteRow(i);
+        }
+      </script>
+</div>
+</body>
+</html>
